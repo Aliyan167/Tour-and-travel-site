@@ -1,0 +1,100 @@
+{% extends 'website/base.html' %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en" data-x="html" data-x-toggle="html-overflow-hidden">
+
+
+<section data-anim-wrap class="layout-pt-md layout-pb-lg mt-header">
+    <div class="container">
+     <div class="row justify-content-center align-items-center">
+    <div data-anim-child="fade" class="col-lg-8">
+
+        <div class="bg-white rounded-12 shadow-2 py-30 px-30 md:py-20 md:px-20 mt-30">
+            <h2 class="text-30 md:text-24 fw-700">Let us know your details</h2>
+
+            <!-- Display messages here -->
+            {% if messages %}
+                <div class="alert-messages">
+                    <ul>
+                        {% for message in messages %}
+                            <li class="alert alert-{{ message.tags }}">
+                                {{ message }}
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% endif %}
+
+            <form method="POST" action="{% url 'tour:booking' %}">
+                {% csrf_token %}
+                <div class="row y-gap-30 contactForm pt-30">
+                    <div class="col-12">
+                        {{ form.full_name.label_tag }}
+                        {{ form.full_name }}
+                    </div>
+
+                    <div class="col-md-6">
+                        {{ form.email.label_tag }}
+                        {{ form.email }}
+                    </div>
+
+                    <div class="col-md-6">
+                        {{ form.phone_number.label_tag }}
+                        {{ form.phone_number }}
+                    </div>
+
+                    <div class="col-md-6">
+                        {{ form.country.label_tag }}
+                        {{ form.country }}
+                    </div>
+
+                    <div class="col-md-6">
+                        {{ form.city.label_tag }}
+                        {{ form.city }}
+                    </div>
+
+                    <div class="col-12">
+                        {{ form.tour.label_tag }}
+                        {{ form.tour }}
+                    </div>
+
+                    <div class="col-12">
+                        {{ form.address_2.label_tag }}
+                        {{ form.address_2 }}
+                    </div>
+
+                    <div class="col-lg-6">
+                        {{ form.state.label_tag }}
+                        {{ form.state }}
+                    </div>
+
+                    <div class="col-lg-6">
+                        {{ form.zip_code.label_tag }}
+                        {{ form.zip_code }}
+                    </div>
+
+                    <div class="col-12">
+                        {{ form.tour_content.label_tag }}
+                        {{ form.tour_content }}
+                    </div>
+
+                    <!-- Button Section -->
+                    <div class="align-right" style="display: flex; justify-content: flex-end; margin-top: 10px;">
+                        <button class="button -md -outline-accent-1 text-accent-1 mt-30" type="submit">
+                            Apply
+                            <i class="icon-arrow-top-right text-16 ml-10"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+    </div>
+</section>
+
+
+{% endblock %}
