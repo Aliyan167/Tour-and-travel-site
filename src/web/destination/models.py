@@ -1,6 +1,7 @@
 from django.db import models
 from django.core.validators import MinValueValidator, MaxValueValidator
 from decimal import Decimal
+from django_ckeditor_5.fields import CKEditor5Field
 
 
 class Destination(models.Model):
@@ -21,6 +22,11 @@ class Destination(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     rating = models.FloatField(default=0.0)
     total_ratings = models.PositiveIntegerField(null=True, blank=True)
+    content = CKEditor5Field()  # CKEditor field
+    Itinerary = CKEditor5Field(default='')
+    image1 = models.ImageField(upload_to='destination_images/', default='default.jpg')
+    image2 = models.ImageField(upload_to='destination_images/', default='default.jpg')
+    image3 = models.ImageField(upload_to='destination_images/', default='default.jpg')
 
     @property
     def discounted_price(self):

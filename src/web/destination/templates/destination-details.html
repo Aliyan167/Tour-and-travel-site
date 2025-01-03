@@ -1,0 +1,613 @@
+{% extends 'website/base.html' %}
+{% load static %}
+{% block content %}
+
+
+<div class="menu js-menu">
+    <div class="menu__overlay js-menu-button"></div>
+
+    <div class="menu__container">
+        <div class="menu__header">
+            <h4>Main Menu</h4>
+
+            <button class="js-menu-button"><i class="icon-cross text-10"></i></button>
+        </div>
+
+        <div class="menu__footer">
+            <i class="icon-headphone text-50"></i>
+
+            <div class="text-20 lh-12 fw-500 mt-20">
+                <div>Speak to our expert at</div>
+                <div class="text-accent-1">1-800-453-6744</div>
+            </div>
+
+            <div class="d-flex items-center x-gap-10 pt-30">
+
+                <div>
+                    <a class="d-block">
+                        <i class="icon-facebook"></i>
+                    </a>
+                </div>
+
+                <div>
+                    <a class="d-block">
+                        <i class="icon-twitter"></i>
+                    </a>
+                </div>
+
+                <div>
+                    <a class="d-block">
+                        <i class="icon-instagram"></i>
+                    </a>
+                </div>
+
+                <div>
+                    <a class="d-block">
+                        <i class="icon-linkedin"></i>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div data-anim="fade" class="container">
+    <div class="row justify-between py-30 mt-80">
+        <div class="col-auto">
+            <div class="text-14">Home > destination ></div>
+        </div>
+
+        <div class="col-auto">
+            <div class="text-14">THE 10 BEST Phuket Tours & Excursions</div>
+        </div>
+    </div>
+</div>
+
+<section class="tourSingleHero5">
+    <div class="tourSingleHero5__image">
+        <div class="js-section-slider" data-gap="0" data-slider-cols="xl-1 lg-1 md-1 sm-1 base-1" data-loop
+             data-nav-prev="js-slider1-prev" data-nav-next="js-slider1-next">
+            <div class="swiper-wrapper">
+
+                <div class="swiper-slide">
+                    <img src="{{ destination.image1.url }}" alt="image">
+                </div>
+
+                <div class="swiper-slide">
+                    <img src="{{ destination.image2.url }}" alt="image">
+                </div>
+
+                <div class="swiper-slide">
+                    <img src="{{ destination.image3.url }}" alt="image">
+                </div>
+
+            </div>
+
+            <div class="navTourSingle">
+                <button class="navTourSingle__button bg-white js-slider1-prev">
+                    <i class="icon-arrow-left text-14"></i>
+                </button>
+
+                <button class="navTourSingle__button bg-white js-slider1-next">
+                    <i class="icon-arrow-right text-14"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="icon">
+            <svg width="1800" height="40" viewBox="0 0 1800 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M-2.7895e-05 26.1652C-2.7895e-05 26.1652 46.3492 19.8469 88.8889 19.4061C132.063 18.9653 168.889 19.4061 221.587 21.6102C293.333 24.5489 431.746 36.4509 505.397 29.9856C579.048 23.5203 582.222 23.2265 619.683 19.1122C661.587 14.4102 746.667 5.00616 852.063 5.44698C964.444 5.88779 1168.25 29.8387 1252.06 28.6632C1260.95 28.5162 1293.97 27.4877 1318.73 25.7244C1342.86 23.9612 1378.41 20.1408 1426.67 18.8183C1446.98 18.2306 1479.37 17.202 1516.83 17.4959C1526.35 17.6428 1556.83 18.0836 1593.02 19.8469C1629.21 21.6102 1662.86 24.402 1693.33 25.2836C1758.73 26.8999 1800 24.5489 1800 24.5489V40.4182H-2.7895e-05V26.1652ZM144.127 23.8142C148.571 25.2836 156.825 24.402 171.429 24.402C186.032 24.402 210.159 26.1652 208.254 26.0183C206.349 25.8714 188.571 23.8142 170.159 23.2265C151.111 22.4918 140.318 22.3448 144.127 23.8142ZM260.952 27.7815C260.952 27.7815 276.19 28.0754 296.508 29.104C316.825 30.2795 361.905 33.2183 392.381 34.2468C444.444 35.8631 492.698 34.2468 488.254 34.0999C483.175 33.9529 427.302 34.9815 376.508 32.4836C355.556 31.455 317.46 29.2509 297.778 28.5162C276.825 27.6346 260.952 27.7815 260.952 27.7815ZM624.127 27.9285C613.333 28.9571 708.571 21.0224 741.587 18.9653C754.921 18.0836 780.952 16.6143 805.079 16.0265C829.841 15.4388 861.587 15.4388 860.952 15.2918C860.952 14.9979 824.127 14.1163 789.841 15.2918C755.556 16.4673 756.825 16.9081 741.587 17.6428C717.46 18.8183 634.921 26.8999 624.127 27.9285ZM535.873 30.2795C534.603 30.2795 540.952 30.8672 566.349 28.6632C591.746 26.4591 608.889 23.5203 610.159 23.2265C611.429 23.0795 587.936 25.8714 568.254 27.6346C549.206 29.3979 536.508 30.2795 535.873 30.2795ZM3.17458 31.6019C3.8095 31.455 15.238 29.9856 33.6507 27.9285C52.0634 25.8714 77.4603 23.8142 76.1904 23.9612C74.9206 23.9612 53.9683 24.8428 29.2064 27.6346C4.44445 30.4264 2.53965 31.7489 3.17458 31.6019ZM1601.27 23.3734C1600.63 23.6673 1613.33 23.6673 1629.84 25.1367C1646.35 26.606 1664.13 27.4877 1679.37 28.0754C1704.76 29.2509 1753.65 27.9285 1751.11 27.7815C1749.21 27.6346 1699.05 28.2224 1671.75 26.753C1657.78 26.0183 1656.51 26.0183 1635.56 24.402C1614.6 22.7857 1601.9 22.9326 1601.27 23.3734ZM1336.51 26.8999C1333.97 27.0469 1314.29 29.2509 1283.17 30.7203C1252.06 32.3366 1226.67 31.455 1226.67 31.8958C1226.67 32.3366 1233.02 33.2183 1266.03 32.3366C1299.05 31.455 1339.05 26.753 1336.51 26.8999ZM1345.4 30.5734C1344.13 30.4264 1323.81 32.4836 1309.21 33.0713C1294.6 33.5121 1297.14 33.806 1297.14 33.9529C1297.14 34.0999 1304.13 34.2468 1314.29 33.6591C1325.08 32.9244 1346.67 30.7203 1345.4 30.5734ZM1205.71 33.9529C1205.08 33.6591 1183.49 32.7774 1170.16 31.3081C1156.83 29.8387 1158.73 30.4264 1158.1 30.5734C1157.46 30.7203 1163.17 31.7489 1173.33 32.4836C1183.49 33.3652 1206.35 34.2468 1205.71 33.9529ZM1384.76 24.1081C1385.4 23.6673 1382.86 23.3734 1372.7 24.402C1362.54 25.4305 1356.19 26.3122 1358.73 26.1652C1361.27 26.0183 1364.44 25.5775 1374.6 24.9897C1385.4 24.402 1384.13 24.5489 1384.76 24.1081ZM1580.95 22.1979C1582.22 22.1979 1567.62 21.0224 1560 20.8755C1552.38 20.7285 1547.3 20.7285 1547.3 21.1693C1547.3 21.6102 1547.94 21.904 1557.46 21.7571C1567.62 21.6102 1579.68 22.1979 1580.95 22.1979ZM833.651 9.4143C834.286 9.26736 848.889 9.85512 881.27 9.85512C913.016 9.85512 967.619 13.3816 990.476 14.9979C1013.33 16.6143 926.984 9.26736 885.714 8.97349C844.444 8.67961 833.016 9.56124 833.651 9.4143Z"
+                      fill="white"/>
+                <path d="M88.2542 13.9694C88.8891 14.1163 117.461 13.5285 133.969 13.9694C180.318 14.9979 241.905 18.6714 239.365 18.2306C236.826 17.7897 152.381 13.6755 131.429 13.3816C100.318 12.7938 87.6193 13.9694 88.2542 13.9694Z"
+                      fill="white"/>
+                <path d="M356.191 26.0183C357.461 26.1652 384.763 27.4876 416.509 27.7815C448.255 28.0754 497.144 26.8999 494.604 27.0468C492.699 27.1938 457.144 29.6917 410.16 28.8101C363.176 27.9285 354.922 25.8713 356.191 26.0183Z"
+                      fill="white"/>
+                <path d="M501.587 20.7285C502.222 20.8754 488.889 22.1979 481.27 22.3448C473.651 22.4917 468.572 22.3448 468.572 21.904C468.572 21.4632 469.206 21.1693 478.73 21.3162C489.524 21.4632 500.953 20.5815 501.587 20.7285Z"
+                      fill="white"/>
+                <path d="M523.81 24.8428C523.81 24.9898 551.746 23.0796 563.81 21.6102C575.873 20.2878 603.175 17.0551 602.54 17.0551C601.905 16.9082 575.873 19.4061 562.54 20.8755C549.207 22.3449 523.81 24.6959 523.81 24.8428Z"
+                      fill="white"/>
+                <path d="M819.047 1.1859C819.682 1.33284 848.254 0.745088 864.761 1.1859C911.111 2.21447 972.698 5.88792 970.158 5.44711C967.619 5.00629 883.174 0.892027 862.222 0.598151C831.111 0.0103991 818.412 1.03896 819.047 1.1859Z"
+                      fill="white"/>
+                <path d="M1533.97 12.0593C1533.97 12.0593 1526.35 12.5001 1515.56 12.2062C1504.76 11.9123 1478.73 10.8838 1463.49 11.1776C1436.83 11.7654 1416.51 15.145 1419.05 14.998C1421.59 14.998 1446.35 11.7654 1473.65 12.2062C1485.08 12.3531 1506.03 12.9409 1516.19 12.794C1526.35 12.647 1533.97 12.0593 1533.97 12.0593Z"
+                      fill="white"/>
+                <path d="M1320.63 21.904C1319.36 21.757 1307.94 23.0795 1293.33 23.5203C1278.73 23.8141 1280 23.9611 1280 24.255C1280 24.4019 1291.43 24.8427 1301.59 24.255C1311.75 23.5203 1321.9 22.0509 1320.63 21.904Z"
+                      fill="white"/>
+                <path d="M1700.95 21.0223C1700.95 21.1692 1673.65 21.0223 1658.41 20.2876C1643.18 19.5529 1626.67 17.4958 1626.67 17.3488C1626.67 17.2019 1643.81 18.5243 1659.05 19.406C1673.65 20.2876 1700.32 20.8753 1700.95 21.0223Z"
+                      fill="white"/>
+            </svg>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="row x-gap-10 y-gap-10 items-center">
+                    <div class="col-auto">
+                        <button class="button -accent-1 text-14 py-5 px-15 bg-white text-accent-1 rounded-200">
+                            Bestseller
+                        </button>
+                    </div>
+                    <div class="col-auto">
+                        <button class="button -accent-1 text-14 py-5 px-15 bg-light-1 rounded-200">Free cancellation
+                        </button>
+                    </div>
+                </div>
+
+                <h2 class="text-40 sm:text-30 lh-14 text-white mt-20">
+                    {{ destination.name }}
+                </h2>
+
+                <div class="row y-gap-20 justify-between items-center pt-20">
+                    <div class="col-auto">
+                        <div class="row x-gap-20 y-gap-20 items-center">
+                            <div class="col-auto">
+                                <div class="d-flex items-center text-white">
+                                    <div class="d-flex x-gap-5 pr-10">
+                                        <i class="flex-center icon-star text-yellow-2 text-12"></i>
+                                    </div>
+                                     {{ destination.rating }} ( {{ destination.total_ratings }})
+                                </div>
+                            </div>
+
+                            <div class="col-auto">
+                                <div class="d-flex items-center text-white">
+                                    <i class="icon-pin text-16 mr-5"></i>
+                                    {{ destination.location  }}
+                                </div>
+                            </div>
+
+                            <div class="col-auto">
+                                <div class="d-flex items-center text-white">
+                                    <i class="icon-reservation text-16 mr-5"></i>
+                                    30K+ booked
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="layout-pt-md js-pin-container">
+    <div class="container">
+        <div class="row y-gap-30 justify-between">
+            <div class="col-lg-8">
+                <div class="tabs -tourSingle js-tabs">
+                    <div class="tabs__controls row x-gap-30 y-gap-10 js-tabs-controls">
+
+                        <div class="col-auto">
+                            <button class="tabs__button text-30 md:text-20 fw-700 js-tabs-button is-tab-el-active"
+                                    data-tab-target=".-tab-item-1">Overview
+                            </button>
+                        </div>
+
+                        <div class="col-auto">
+                            <button class="tabs__button text-30 md:text-20 fw-700 js-tabs-button "
+                                    data-tab-target=".-tab-item-2">included
+                            </button>
+                        </div>
+
+                        <div class="col-auto">
+                            <button class="tabs__button text-30 md:text-20 fw-700 js-tabs-button "
+                                    data-tab-target=".-tab-item-3">Itinerary
+                            </button>
+                        </div>
+
+
+
+                        <div class="col-auto">
+                            <button class="tabs__button text-30 md:text-20 fw-700 js-tabs-button "
+                                    data-tab-target=".-tab-item-5">FAQ
+                            </button>
+                        </div>
+
+                        <div class="col-auto">
+                            <button class="tabs__button text-30 md:text-20 fw-700 js-tabs-button "
+                                    data-tab-target=".-tab-item-6">Reviews
+                            </button>
+                        </div>
+
+                    </div>
+
+                    <div class="tabs__content pt-40 js-tabs-content">
+                        <div class="tabs__pane -tab-item-1 is-tab-el-active">
+                            <div class="row y-gap-20 justify-between items-center layout-pb-md">
+
+                                <div class="col-lg-3 col-6">
+                                    <div class="d-flex items-center">
+                                        <div class="flex-center size-50 rounded-12 border-1">
+                                            <i class="text-20 icon-clock"></i>
+                                        </div>
+
+                                        <div class="ml-10">
+                                            <div class="lh-16">Duration</div>
+                                            <div class="text-14 text-light-2 lh-16">3 days</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3 col-6">
+                                    <div class="d-flex items-center">
+                                        <div class="flex-center size-50 rounded-12 border-1">
+                                            <i class="text-20 icon-teamwork"></i>
+                                        </div>
+
+                                        <div class="ml-10">
+                                            <div class="lh-16">Group Size</div>
+                                            <div class="text-14 text-light-2 lh-16">10+ people</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3 col-6">
+                                    <div class="d-flex items-center">
+                                        <div class="flex-center size-50 rounded-12 border-1">
+                                            <i class="text-20 icon-birthday-cake"></i>
+                                        </div>
+
+                                        <div class="ml-10">
+                                            <div class="lh-16">Ages</div>
+                                            <div class="text-14 text-light-2 lh-16">18-99 yrs</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3 col-6">
+                                    <div class="d-flex items-center">
+                                        <div class="flex-center size-50 rounded-12 border-1">
+                                            <i class="text-20 icon-translate"></i>
+                                        </div>
+
+                                        <div class="ml-10">
+                                            <div class="lh-16">Languages</div>
+                                            <div class="text-14 text-light-2 lh-16">English, Urdu</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <p class="mt-20">{{ destination.content | safe }}</p>
+                        </div>
+
+                        <div class="tabs__pane -tab-item-2">
+                            <h2 class="text-30">What's included</h2>
+
+                            <div class="row x-gap-130 y-gap-20 pt-20">
+                                <div class="col-lg-6">
+                                    <div class="y-gap-15">
+                                        <div class="d-flex">
+                                            <i class="icon-check flex-center text-10 size-24 rounded-full text-green-2 bg-green-1 mr-15"></i>
+                                            Beverages, drinking water, morning tea and buffet lunch
+                                        </div>
+                                        <div class="d-flex">
+                                            <i class="icon-check flex-center text-10 size-24 rounded-full text-green-2 bg-green-1 mr-15"></i>
+                                            Local taxes
+                                        </div>
+                                        <div class="d-flex">
+                                            <i class="icon-check flex-center text-10 size-24 rounded-full text-green-2 bg-green-1 mr-15"></i>
+                                            Hotel pickup and drop-off by air-conditioned minivan
+                                        </div>
+                                        <div class="d-flex">
+                                            <i class="icon-check flex-center text-10 size-24 rounded-full text-green-2 bg-green-1 mr-15"></i>
+                                            InsuranceTransfer to a private pier
+                                        </div>
+                                        <div class="d-flex">
+                                            <i class="icon-check flex-center text-10 size-24 rounded-full text-green-2 bg-green-1 mr-15"></i>
+                                            Soft drinks
+                                        </div>
+                                        <div class="d-flex">
+                                            <i class="icon-check flex-center text-10 size-24 rounded-full text-green-2 bg-green-1 mr-15"></i>
+                                            Tour Guide
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6">
+                                    <div class="y-gap-15">
+                                        <div class="d-flex">
+                                            <i class="icon-cross flex-center text-10 size-24 rounded-full text-red-3 bg-red-4 mr-15"></i>
+                                            Towel
+                                        </div>
+                                        <div class="d-flex">
+                                            <i class="icon-cross flex-center text-10 size-24 rounded-full text-red-3 bg-red-4 mr-15"></i>
+                                            Tips
+                                        </div>
+                                        <div class="d-flex">
+                                            <i class="icon-cross flex-center text-10 size-24 rounded-full text-red-3 bg-red-4 mr-15"></i>
+                                            Alcoholic Beverages
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tabs__pane -tab-item-3">
+                            <h2 class="text-30">Itinerary</h2>
+
+                            <div class="mt-30">
+
+                                    <div class="roadmap__item">
+
+                                        <div class="roadmap__wrap">
+                                            <div class="roadmap__title">{{ destination.Itinerary | safe }}</div>
+                                        </div>
+                                    </div>
+
+
+                            </div>
+                        </div>
+
+                        <div class="tabs__pane -tab-item-4">
+                            <h2 class="text-30">Availability Calendar</h2>
+
+                            <div class="searchMenu-date mt-30 js-form-dd js-calendar js-calendar-el"
+                                 data-slider-cols-2="true">
+                                <div class="searchMenu-date__field shadow-2" data-x-dd="searchMenu-date"
+                                     data-x-dd-toggle="-is-active">
+                                    <div class="bg-white rounded-4">
+                                        <div class="elCalendar js-calendar-el-calendar"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="tabs__pane -tab-item-5">
+                            <h2 class="text-30">FAQ</h2>
+
+                            <div class="accordion -simple row y-gap-20 mt-30 js-accordion">
+
+                                <div class="col-12">
+                                    <div class="accordion__item px-20 py-15 border-1 rounded-12">
+                                        <div class="accordion__button d-flex items-center justify-between">
+                                            <div class="button text-16 text-dark-1">Can I get the refund?</div>
+
+                                            <div class="accordion__icon size-30 flex-center bg-light-2 rounded-full">
+                                                <i class="icon-plus"></i>
+                                                <i class="icon-minus"></i>
+                                            </div>
+                                        </div>
+
+                                        <div class="accordion__content">
+                                            <div class="pt-20">
+                                                <p>Phang Nga Bay Sea Cave Canoeing & James Bond Island w/ Buffet Lunch
+                                                    by Big Boat cancellation policy: For a full refund, cancel at least
+                                                    24 hours in advance of the start date of the experience. Discover
+                                                    and book Phang Nga Bay Sea Cave Canoeing & James Bond Island w/
+                                                    Buffet Lunch by Big Boat</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <div class="accordion__item px-20 py-15 border-1 rounded-12">
+                                        <div class="accordion__button d-flex items-center justify-between">
+                                            <div class="button text-16 text-dark-1">Can I change the travel date?</div>
+
+                                            <div class="accordion__icon size-30 flex-center bg-light-2 rounded-full">
+                                                <i class="icon-plus"></i>
+                                                <i class="icon-minus"></i>
+                                            </div>
+                                        </div>
+
+                                        <div class="accordion__content">
+                                            <div class="pt-20">
+                                                <p>Phang Nga Bay Sea Cave Canoeing & James Bond Island w/ Buffet Lunch
+                                                    by Big Boat cancellation policy: For a full refund, cancel at least
+                                                    24 hours in advance of the start date of the experience. Discover
+                                                    and book Phang Nga Bay Sea Cave Canoeing & James Bond Island w/
+                                                    Buffet Lunch by Big Boat</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <div class="accordion__item px-20 py-15 border-1 rounded-12">
+                                        <div class="accordion__button d-flex items-center justify-between">
+                                            <div class="button text-16 text-dark-1">When and where does the tour end?
+                                            </div>
+
+                                            <div class="accordion__icon size-30 flex-center bg-light-2 rounded-full">
+                                                <i class="icon-plus"></i>
+                                                <i class="icon-minus"></i>
+                                            </div>
+                                        </div>
+
+                                        <div class="accordion__content">
+                                            <div class="pt-20">
+                                                <p>Phang Nga Bay Sea Cave Canoeing & James Bond Island w/ Buffet Lunch
+                                                    by Big Boat cancellation policy: For a full refund, cancel at least
+                                                    24 hours in advance of the start date of the experience. Discover
+                                                    and book Phang Nga Bay Sea Cave Canoeing & James Bond Island w/
+                                                    Buffet Lunch by Big Boat</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <div class="accordion__item px-20 py-15 border-1 rounded-12">
+                                        <div class="accordion__button d-flex items-center justify-between">
+                                            <div class="button text-16 text-dark-1">Do you arrange airport transfers?
+                                            </div>
+
+                                            <div class="accordion__icon size-30 flex-center bg-light-2 rounded-full">
+                                                <i class="icon-plus"></i>
+                                                <i class="icon-minus"></i>
+                                            </div>
+                                        </div>
+
+                                        <div class="accordion__content">
+                                            <div class="pt-20">
+                                                <p>Phang Nga Bay Sea Cave Canoeing & James Bond Island w/ Buffet Lunch
+                                                    by Big Boat cancellation policy: For a full refund, cancel at least
+                                                    24 hours in advance of the start date of the experience. Discover
+                                                    and book Phang Nga Bay Sea Cave Canoeing & James Bond Island w/
+                                                    Buffet Lunch by Big Boat</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="tabs__pane -tab-item-6">
+                            <h2 class="text-30">Customer Reviews</h2>
+
+                            <div class="overallRating mt-30">
+                                <div class="overallRating__list">
+
+                                    <div class="overallRating__item">
+                                        <div class="overallRating__content">
+                                            <div class="overallRating__icon">
+                                                <i class="icon-star-2 text-30 text-accent-1"></i>
+                                            </div>
+
+                                            <div class="overallRating__info">
+                                                <h5 class="text-16 fw-500">Overall Rating</h5>
+                                                <div class="lh-15">Excellent</div>
+                                            </div>
+                                        </div>
+
+                                        <div class="overallRating__rating d-flex items-center">
+                                            <i class="icon-star text-yellow-2 text-16"></i>
+                                            <div class="text-16 fw-500 ml-10">5.0</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="overallRating__item">
+                                        <div class="overallRating__content">
+                                            <div class="overallRating__icon">
+                                                <i class="icon-pin-2 text-30 text-accent-1"></i>
+                                            </div>
+
+                                            <div class="overallRating__info">
+                                                <h5 class="text-16 fw-500">Location</h5>
+                                                <div class="lh-15">Excellent</div>
+                                            </div>
+                                        </div>
+
+                                        <div class="overallRating__rating d-flex items-center">
+                                            <i class="icon-star text-yellow-2 text-16"></i>
+                                            <div class="text-16 fw-500 ml-10">5.0</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="overallRating__item">
+                                        <div class="overallRating__content">
+                                            <div class="overallRating__icon">
+                                                <i class="icon-application text-30 text-accent-1"></i>
+                                            </div>
+
+                                            <div class="overallRating__info">
+                                                <h5 class="text-16 fw-500">Amenities</h5>
+                                                <div class="lh-15">Excellent</div>
+                                            </div>
+                                        </div>
+
+                                        <div class="overallRating__rating d-flex items-center">
+                                            <i class="icon-star text-yellow-2 text-16"></i>
+                                            <div class="text-16 fw-500 ml-10">5.0</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="overallRating__item">
+                                        <div class="overallRating__content">
+                                            <div class="overallRating__icon">
+                                                <i class="icon-utensils text-30 text-accent-1"></i>
+                                            </div>
+
+                                            <div class="overallRating__info">
+                                                <h5 class="text-16 fw-500">Food</h5>
+                                                <div class="lh-15">Excellent</div>
+                                            </div>
+                                        </div>
+
+                                        <div class="overallRating__rating d-flex items-center">
+                                            <i class="icon-star text-yellow-2 text-16"></i>
+                                            <div class="text-16 fw-500 ml-10">5.0</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="overallRating__item">
+                                        <div class="overallRating__content">
+                                            <div class="overallRating__icon">
+                                                <i class="icon-price-tag text-30 text-accent-1"></i>
+                                            </div>
+
+                                            <div class="overallRating__info">
+                                                <h5 class="text-16 fw-500">Price</h5>
+                                                <div class="lh-15">Excellent</div>
+                                            </div>
+                                        </div>
+
+                                        <div class="overallRating__rating d-flex items-center">
+                                            <i class="icon-star text-yellow-2 text-16"></i>
+                                            <div class="text-16 fw-500 ml-10">5.0</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="overallRating__item">
+                                        <div class="overallRating__content">
+                                            <div class="overallRating__icon">
+                                                <i class="icon-bed-2 text-30 text-accent-1"></i>
+                                            </div>
+
+                                            <div class="overallRating__info">
+                                                <h5 class="text-16 fw-500">Rooms</h5>
+                                                <div class="lh-15">Excellent</div>
+                                            </div>
+                                        </div>
+
+                                        <div class="overallRating__rating d-flex items-center">
+                                            <i class="icon-star text-yellow-2 text-16"></i>
+                                            <div class="text-16 fw-500 ml-10">5.0</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="overallRating__item">
+                                        <div class="overallRating__content">
+                                            <div class="overallRating__icon">
+                                                <i class="icon-online-support-2 text-30 text-accent-1"></i>
+                                            </div>
+
+                                            <div class="overallRating__info">
+                                                <h5 class="text-16 fw-500">Tour Operator</h5>
+                                                <div class="lh-15">Excellent</div>
+                                            </div>
+                                        </div>
+
+                                        <div class="overallRating__rating d-flex items-center">
+                                            <i class="icon-star text-yellow-2 text-16"></i>
+                                            <div class="text-16 fw-500 ml-10">5.0</div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="d-flex justify-end js-pin-content">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="layout-pt-xl layout-pb-xl">
+    <div class="container">
+    </div>
+</section>
+
+{% endblock %}

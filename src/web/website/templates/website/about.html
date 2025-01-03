@@ -45,7 +45,9 @@
                     nulla pariatur.
                 </p>
 
-                <button class="button -md -dark-1 bg-accent-1 text-white mt-30">Learn More</button>
+                <a href="{% url 'website:about' %}">
+                    <button class="button -md -dark-1 bg-accent-1 text-white mt-30">Learn More</button>
+                </a>
             </div>
         </div>
     </div>
@@ -156,8 +158,12 @@
 
                     <p class="mt-10">Traveling under your own power and at your own pace, you'll connect more
                         meaningfully with your destination and have more fun!</p>
-                    <button class="button -md -dark-1 bg-accent-1 text-white mt-60 md:mt-30">Explore Our Tours</button>
+                    <a href=" {% url 'tour:tour' %}">
+                        <button class="button -md -dark-1 bg-accent-1 text-white mt-60 md:mt-30">Explore Our Tours
+                        </button>
+                    </a>
                 </div>
+
 
                 <div class="col-md-6">
                     <div class="featuresGrid">
@@ -204,11 +210,15 @@
                 <div class="overflow-hidden js-section-slider" data-slider-cols="xl-1 lg-1 md-1 sm-1 base-1"
                      data-pagination="js-testimonials-pagination">
                     <div class="swiper-wrapper">
-
+                        {% for testimonial in testimonials %}
                         <div class="swiper-slide">
                             <div class="testimonials -type-1 pt-10 text-center">
                                 <div class="testimonials__image size-100 rounded-full">
-                                    <img src="{% static 'img/testimonials/1/2.png' %}" alt="image">
+                                   {% if testimonial.image %}
+                                        <img src="{{ testimonial.image.url }}" alt="{{ testimonial.name }}">
+                                        {% else %}
+                                        <img src="{% static 'img/testimonials/1/2.png' %}" alt="Default Image">
+                                        {% endif %}
 
                                     <div class="testimonials__icon">
                                         <svg width="16" height="13" viewBox="0 0 16 13" fill="none"
@@ -221,130 +231,16 @@
 
                                 <div class="text-18 fw-500 text-accent-1 mt-60 md:mt-40">Great quality!</div>
 
-                                <div class="text-20 fw-500 mt-20">The tours in this website are great. I had been really
-                                    enjoy with my family! The team is very professional and taking care of the
-                                    customers. Will surely recommend to my freind to join this company!
+                                <div class="text-20 fw-500 mt-20">{{ testimonial.description }}
                                 </div>
 
                                 <div class="mt-20 md:mt-40">
-                                    <div class="lh-16 text-16 fw-500">Brooklyn Simmons</div>
-                                    <div class="lh-16">Web Developer</div>
+                                    <div class="lh-16 text-16 fw-500">{{ testimonial.name }}</div>
+                                    <div class="lh-16">{{ testimonial.rank }}</div>
                                 </div>
                             </div>
                         </div>
-
-                        <div class="swiper-slide">
-                            <div class="testimonials -type-1 pt-10 text-center">
-                                <div class="testimonials__image size-100 rounded-full">
-                                    <img src="{% static 'img/testimonials/1/2.png' %}" alt="image">
-
-                                    <div class="testimonials__icon">
-                                        <svg width="16" height="13" viewBox="0 0 16 13" fill="none"
-                                             xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M13.3165 0.838867C12.1013 1.81846 10.9367 3.43478 9.77215 5.63887C8.65823 7.84295 8 10.2429 7.8481 12.8389H12.4557C12.4051 8.87152 13.6203 5.24703 16 1.91642L13.3165 0.838867ZM5.51899 0.838867C4.25316 1.81846 3.08861 3.43478 1.92405 5.63887C0.810126 7.84295 0.151899 10.2429 0 12.8389H4.60759C4.55696 8.87152 5.77215 5.19805 8.20253 1.91642L5.51899 0.838867Z"
-                                                  fill="white"/>
-                                        </svg>
-                                    </div>
-                                </div>
-
-                                <div class="text-18 fw-500 text-accent-1 mt-60 md:mt-40">Great quality!</div>
-
-                                <div class="text-20 fw-500 mt-20">The tours in this website are great. I had been really
-                                    enjoy with my family! The team is very professional and taking care of the
-                                    customers. Will surely recommend to my freind to join this company!
-                                </div>
-
-                                <div class="mt-20 md:mt-40">
-                                    <div class="lh-16 text-16 fw-500">Brooklyn Simmons</div>
-                                    <div class="lh-16">Web Developer</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div class="testimonials -type-1 pt-10 text-center">
-                                <div class="testimonials__image size-100 rounded-full">
-                                    <img src="{% static 'img/testimonials/1/2.png' %}" alt="image">
-
-                                    <div class="testimonials__icon">
-                                        <svg width="16" height="13" viewBox="0 0 16 13" fill="none"
-                                             xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M13.3165 0.838867C12.1013 1.81846 10.9367 3.43478 9.77215 5.63887C8.65823 7.84295 8 10.2429 7.8481 12.8389H12.4557C12.4051 8.87152 13.6203 5.24703 16 1.91642L13.3165 0.838867ZM5.51899 0.838867C4.25316 1.81846 3.08861 3.43478 1.92405 5.63887C0.810126 7.84295 0.151899 10.2429 0 12.8389H4.60759C4.55696 8.87152 5.77215 5.19805 8.20253 1.91642L5.51899 0.838867Z"
-                                                  fill="white"/>
-                                        </svg>
-                                    </div>
-                                </div>
-
-                                <div class="text-18 fw-500 text-accent-1 mt-60 md:mt-40">Great quality!</div>
-
-                                <div class="text-20 fw-500 mt-20">The tours in this website are great. I had been really
-                                    enjoy with my family! The team is very professional and taking care of the
-                                    customers. Will surely recommend to my freind to join this company!
-                                </div>
-
-                                <div class="mt-20 md:mt-40">
-                                    <div class="lh-16 text-16 fw-500">Brooklyn Simmons</div>
-                                    <div class="lh-16">Web Developer</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div class="testimonials -type-1 pt-10 text-center">
-                                <div class="testimonials__image size-100 rounded-full">
-                                    <img src="{% static 'img/testimonials/1/2.png' %}" alt="image">
-
-                                    <div class="testimonials__icon">
-                                        <svg width="16" height="13" viewBox="0 0 16 13" fill="none"
-                                             xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M13.3165 0.838867C12.1013 1.81846 10.9367 3.43478 9.77215 5.63887C8.65823 7.84295 8 10.2429 7.8481 12.8389H12.4557C12.4051 8.87152 13.6203 5.24703 16 1.91642L13.3165 0.838867ZM5.51899 0.838867C4.25316 1.81846 3.08861 3.43478 1.92405 5.63887C0.810126 7.84295 0.151899 10.2429 0 12.8389H4.60759C4.55696 8.87152 5.77215 5.19805 8.20253 1.91642L5.51899 0.838867Z"
-                                                  fill="white"/>
-                                        </svg>
-                                    </div>
-                                </div>
-
-                                <div class="text-18 fw-500 text-accent-1 mt-60 md:mt-40">Great quality!</div>
-
-                                <div class="text-20 fw-500 mt-20">The tours in this website are great. I had been really
-                                    enjoy with my family! The team is very professional and taking care of the
-                                    customers. Will surely recommend to my freind to join this company!
-                                </div>
-
-                                <div class="mt-20 md:mt-40">
-                                    <div class="lh-16 text-16 fw-500">Brooklyn Simmons</div>
-                                    <div class="lh-16">Web Developer</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div class="testimonials -type-1 pt-10 text-center">
-                                <div class="testimonials__image size-100 rounded-full">
-                                    <img src="{% static 'img/testimonials/1/2.png' %}" alt="image">
-
-                                    <div class="testimonials__icon">
-                                        <svg width="16" height="13" viewBox="0 0 16 13" fill="none"
-                                             xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M13.3165 0.838867C12.1013 1.81846 10.9367 3.43478 9.77215 5.63887C8.65823 7.84295 8 10.2429 7.8481 12.8389H12.4557C12.4051 8.87152 13.6203 5.24703 16 1.91642L13.3165 0.838867ZM5.51899 0.838867C4.25316 1.81846 3.08861 3.43478 1.92405 5.63887C0.810126 7.84295 0.151899 10.2429 0 12.8389H4.60759C4.55696 8.87152 5.77215 5.19805 8.20253 1.91642L5.51899 0.838867Z"
-                                                  fill="white"/>
-                                        </svg>
-                                    </div>
-                                </div>
-
-                                <div class="text-18 fw-500 text-accent-1 mt-60 md:mt-40">Great quality!</div>
-
-                                <div class="text-20 fw-500 mt-20">The tours in this website are great. I had been really
-                                    enjoy with my family! The team is very professional and taking care of the
-                                    customers. Will surely recommend to my freind to join this company!
-                                </div>
-
-                                <div class="mt-20 md:mt-40">
-                                    <div class="lh-16 text-16 fw-500">Brooklyn Simmons</div>
-                                    <div class="lh-16">Web Developer</div>
-                                </div>
-                            </div>
-                        </div>
-
+                         {% endfor %}
                     </div>
 
                     <div class="pagination -type-1 justify-center pt-60 md:pt-40 js-testimonials-pagination">
@@ -377,19 +273,10 @@
                     </p>
 
                     <div class="text-18 text-white mt-40 md:mt-20">
-                        Get a magic link sent to your email
+
                     </div>
 
-                    <div class="mt-10">
-                        <div class="singleInput -type-2 row x-gap-10 y-gap-10">
-                            <div class="col-md-auto col-12">
-                                <input type="email" placeholder="Email" class="">
-                            </div>
-                            <div class="col-md-auto col-12">
-                                <button class="button -md -accent-1 bg-white col-12 text-accent-2">Send</button>
-                            </div>
-                        </div>
-                    </div>
+
                 </div>
             </div>
 

@@ -1,6 +1,6 @@
+
 from django.contrib import admin
 from django.urls import path, include, re_path
-from django.views.generic import TemplateView
 from django.views.static import serve
 
 from root.settings import ENVIRONMENT, MEDIA_ROOT, STATIC_ROOT
@@ -25,6 +25,7 @@ urlpatterns += [
 urlpatterns += [
     path('admin/', admin.site.urls),
     path('tinymce/', include('tinymce.urls')),
+    path("ckeditor5/", include('django_ckeditor_5.urls')),
     path('blog/', include(('src.web.blog.urls', 'blog'), namespace='blog')),
     path('tour/', include(('src.web.tour.urls', 'tour'), namespace='tour')),
     path('destination/', include(('src.web.destination.urls', 'destination'), namespace='destination')),
@@ -36,6 +37,9 @@ urlpatterns += [
 urlpatterns += [
     re_path(r'^media/(?P<path>.*)$', serve, {'document_root': MEDIA_ROOT}),
     re_path(r'^static/(?P<path>.*)$', serve, {'document_root': STATIC_ROOT}),
+
+
+
 ]
 
 """ DEVELOPMENT ONLY -------------------------------------------------------------------------------------------- """

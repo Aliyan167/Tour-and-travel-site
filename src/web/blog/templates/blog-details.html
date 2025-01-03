@@ -123,59 +123,63 @@
 
 
                 <div class="contactForm y-gap-30 pt-30">
-                    <div class="row y-gap-30">
-                        <div class="col-md-6">
+                    <form method="post" novalidate>
+                        {% csrf_token %}
+                        <div class="row y-gap-30">
+                            <div class="col-md-6">
 
-                            <div class="form-input ">
-                                <input type="text" required>
-                                <label class="lh-1 text-16 text-light-1">Name</label>
+                                <div class="form-input ">
+                                    {{ form.name }}
+                                    <label class="lh-1 text-16 text-light-1">Name</label>
+                                </div>
+
                             </div>
 
-                        </div>
+                            <div class="col-md-6">
 
-                        <div class="col-md-6">
+                                <div class="form-input ">
+                                    {{ form.email }}
+                                    <label class="lh-1 text-16 text-light-1">Email</label>
+                                </div>
 
-                            <div class="form-input ">
-                                <input type="email" required>
-                                <label class="lh-1 text-16 text-light-1">Email</label>
                             </div>
-
                         </div>
-                    </div>
 
-                    <div class="row">
-                        <div class="col-12">
+                        <div class="row">
+                            <div class="col-12">
 
-                            <div class="form-input ">
-                                <input type="text" required>
-                                <label class="lh-1 text-16 text-light-1">Title</label>
+                                <div class="form-input" style="margin-top: 30px;">
+                                    {{ form.title }}
+                                    <label class="lh-1 text-16 text-light-1">Title</label>
+                                </div>
+
                             </div>
-
                         </div>
-                    </div>
 
-                    <div class="row">
-                        <div class="col-12">
+                        <div class="row">
+                            <div class="col-12">
 
-                            <div class="form-input ">
-                                <textarea required rows="5"></textarea>
-                                <label class="lh-1 text-16 text-light-1">Comment</label>
+                                <div class="form-input " style="margin-top: 30px;">
+                                    {{ form.comment }}
+                                    <label class="lh-1 text-16 text-light-1">Comment</label>
+                                </div>
+
                             </div>
-
                         </div>
-                    </div>
 
-                    <div class="row">
-                        <div class="col-12">
-                            <button class="button -md -dark-1 bg-accent-1 text-white">
-                                Post Comment
-                                <i class="icon-arrow-top-right text-16 ml-10"></i>
-                            </button>
+                        <div class="row">
+                            <div class="col-12">
+                                <button class="button -md -dark-1 bg-accent-1 text-white">
+                                    Post Comment
+                                    <i class="icon-arrow-top-right text-16 ml-10"></i>
+                                </button>
+                            </div>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
+
     </div>
 </section>
 

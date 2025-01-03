@@ -3,6 +3,7 @@ from .models import Testimonials
 from .models import TourFeature
 from .models import Contact
 from .models import TourCategory
+from .models import NewsletterSubscription
 
 
 @admin.register(Testimonials)
@@ -43,3 +44,11 @@ class TourCategoryAdmin(admin.ModelAdmin):
 
     image_preview.allow_tags = True
     image_preview.short_description = "Image Preview"
+
+
+
+@admin.register(NewsletterSubscription)
+class NewsletterSubscriptionAdmin(admin.ModelAdmin):
+    list_display = ('email', 'subscribed_at')  # Display these fields in the admin list view
+    search_fields = ('email',)  # Add a search bar for the email field
+    list_filter = ('subscribed_at',)  # Add filters for the subscription date

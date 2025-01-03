@@ -30,3 +30,15 @@ class BlogPost(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class Comment(models.Model):
+    blog = models.ForeignKey('BlogPost', on_delete=models.CASCADE, related_name='comments')
+    name = models.CharField(max_length=100)
+    email = models.EmailField()
+    title = models.CharField(max_length=200)
+    comment = models.TextField()
+
+    def __str__(self):
+        return self.title
+

@@ -1,14 +1,16 @@
-from django.shortcuts import render
+from django.contrib import messages
+from django.http import JsonResponse
+from django.urls import reverse_lazy
 from django.views.generic import TemplateView
-from .models import Testimonials, TourFeature, TourCategory
+from django.views.generic.edit import FormView
+
+from .models import NewsletterSubscription
+from .models import Testimonials, TourFeature
+from .models import TourCategory
+from ..blog.models import BlogPost
+from ..destination.models import Destination
 from ..tour.forms import BookingForm
 from ..tour.models import Tour
-from ..blog.models import BlogPost
-from django.views.generic.edit import FormView
-from django.contrib import messages
-from django.urls import reverse_lazy
-from .forms import ContactForm
-from .models import TourCategory
 
 
 class HomeView(TemplateView):
@@ -20,6 +22,7 @@ class HomeView(TemplateView):
 
         # Add your custom data
         context['testimonials'] = Testimonials.objects.all()[:3]
+        context['destinations'] = Destination.objects.all()[:4]
 
         # Debug the fetched tours
         context['tour_features'] = TourFeature.objects.all()[:10]
@@ -44,6 +47,14 @@ class HomeView(TemplateView):
 
 class AboutView(TemplateView):
     template_name = 'website/about.html'
+
+    def get_context_data(self, **kwargs):
+        # Call the superclass method to initialize context
+        context = super().get_context_data(**kwargs)
+
+        # Add your custom data
+        context['testimonials'] = Testimonials.objects.all()[:3]
+        return context
 
 
 class ContactView(FormView):
