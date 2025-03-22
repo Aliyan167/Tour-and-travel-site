@@ -29,15 +29,7 @@
         <div class="row y-gap-30 justify-center">
             <div class="col-lg-8">
                 <h2 class="text-30 md:text-24">The Brazen Head</h2>
-                <p class="mt-20">{{ post.description }}</p>
-
-                <ul class="ulList2 mt-20">
-                    <li>Sed viverra ipsum nunc aliquet bibendum enim facilisis gravida.</li>
-                    <li>At urna condimentum mattis pellentesque id nibh. Laoreet non curabitur</li>
-                    <li>Magna etiam tempor orci eu lobortis elementum.</li>
-                    <li>Bibendum est ultricies integer quis. Semper eget duis at tellus.</li>
-                </ul>
-
+                <p class="mt-20">{{ blog.description | safe }}</p>
                 <div class="blockquote bg-accent-1-05 rounded-12 px-30 py-30 mt-20">
                     <div class="blockquote__icon">
                         <svg width="37" height="25" viewBox="0 0 37 25" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -57,15 +49,19 @@
 
                 <div class="row y-gap-30 pt-20">
                     <div class="col-md-6">
-                        {% if tour.image1 %}
-                        <a href="{{ tour.image1.url }}" class="js-gallery" data-gallery="gallery1"></a>
+                        {% if blog.image1 %}
+                        <a href="{{ blog.image1.url }}" class="js-gallery" data-gallery="gallery1">
+                            <img src="{{ blog.image1.url }}" alt="Blog Image 1" class="img-fluid">
+                        </a>
                         {% endif %}
                         <div class="mt-10">Donec purus posuere nullam lacus aliquam.</div>
                     </div>
 
                     <div class="col-md-6">
-                        {% if tour.image2 %}
-                        <a href="{{ tour.image2.url }}" class="js-gallery" data-gallery="gallery1"></a>
+                        {% if blog.image2 %}
+                        <a href="{{ blog.image2.url }}" class="js-gallery" data-gallery="gallery1">
+                            <img src="{{ blog.image2.url }}" alt="Blog Image 2" class="img-fluid">
+                        </a>
                         {% endif %}
                         <div class="mt-10">Donec purus posuere nullam lacus aliquam.</div>
                     </div>
@@ -116,67 +112,6 @@
                     </div>
                 </div>
                 <div class="line mt-60 mb-30"></div>
-
-
-                <h2 class="text-30 pt-60">Leave a Reply</h2>
-                <p class="mt-30">Your email address will not be published. Required fields are marked *</p>
-
-
-                <div class="contactForm y-gap-30 pt-30">
-                    <form method="post" novalidate>
-                        {% csrf_token %}
-                        <div class="row y-gap-30">
-                            <div class="col-md-6">
-
-                                <div class="form-input ">
-                                    {{ form.name }}
-                                    <label class="lh-1 text-16 text-light-1">Name</label>
-                                </div>
-
-                            </div>
-
-                            <div class="col-md-6">
-
-                                <div class="form-input ">
-                                    {{ form.email }}
-                                    <label class="lh-1 text-16 text-light-1">Email</label>
-                                </div>
-
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-12">
-
-                                <div class="form-input" style="margin-top: 30px;">
-                                    {{ form.title }}
-                                    <label class="lh-1 text-16 text-light-1">Title</label>
-                                </div>
-
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-12">
-
-                                <div class="form-input " style="margin-top: 30px;">
-                                    {{ form.comment }}
-                                    <label class="lh-1 text-16 text-light-1">Comment</label>
-                                </div>
-
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-12">
-                                <button class="button -md -dark-1 bg-accent-1 text-white">
-                                    Post Comment
-                                    <i class="icon-arrow-top-right text-16 ml-10"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
             </div>
         </div>
 

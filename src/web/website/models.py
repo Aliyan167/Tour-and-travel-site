@@ -1,5 +1,7 @@
 from django.db import models
 
+from src.web.tour.models import TourCategory
+
 
 class Testimonials(models.Model):
     name = models.CharField(max_length=100)
@@ -27,13 +29,19 @@ class TourFeature(models.Model):
 
 
 class Contact(models.Model):
-    name = models.CharField(max_length=255)
+    full_name = models.CharField(max_length=255)
     email = models.EmailField()
-    phone = models.CharField(max_length=15, blank=True, null=True)
-    message = models.TextField()
+    phone_number = models.CharField(max_length=15, blank=True, null=True)
+    country = models.CharField(max_length=100)
+    city = models.CharField(max_length=100)
+    state = models.CharField(max_length=100, blank=True, null=True)
+    zip_code = models.CharField(max_length=20, blank=True, null=True)
+    address = models.TextField(blank=True, null=True)
+    tour = models.ForeignKey(TourCategory, on_delete=models.CASCADE, related_name="contact_tours")  # Changed related_name
+    tour_content = models.TextField()
 
     def __str__(self):
-        return f"Message from {self.name} ({self.email})"
+        return f"{self.full_name} - {self.email}"
 
 
 class TourCategory(models.Model):
@@ -55,3 +63,24 @@ class NewsletterSubscription(models.Model):
 
     def __str__(self):
         return self.email
+
+
+class Activity(models.Model):
+    title = models.CharField(max_length=255)
+    image = models.ImageField(upload_to='activities/')
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.title
+
+
+class team(models.Model):
+    name = models.CharField(max_length=100)
+    rank = models.CharField(max_length=100)
+    image = models.ImageField(upload_to='team_images/', null=True, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.name

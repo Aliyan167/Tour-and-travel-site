@@ -6,13 +6,10 @@ from .models import NewsletterSubscription
 class ContactForm(forms.ModelForm):
     class Meta:
         model = Contact
-        fields = ['name', 'email', 'phone', 'message']
-        widgets = {
-            'name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Your Name'}),
-            'email': forms.EmailInput(attrs={'class': 'form-control', 'placeholder': 'Your Email'}),
-            'phone': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Your Phone Number (optional)'}),
-            'message': forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Your Message'}),
-        }
+        fields = [
+            'full_name', 'email', 'phone_number', 'country',
+            'city', 'state', 'zip_code', 'address', 'tour', 'tour_content'
+        ]
 
 
 class NewsletterSubscriptionForm(forms.ModelForm):
@@ -33,3 +30,6 @@ class NewsletterSubscriptionForm(forms.ModelForm):
         if NewsletterSubscription.objects.filter(email=email).exists():
             raise forms.ValidationError('This email is already subscribed.')
         return email
+
+
+

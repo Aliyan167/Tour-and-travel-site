@@ -4,6 +4,8 @@ from .models import TourFeature
 from .models import Contact
 from .models import TourCategory
 from .models import NewsletterSubscription
+from .models import Activity
+from .models import team
 
 
 @admin.register(Testimonials)
@@ -21,14 +23,20 @@ class TourFeatureAdmin(admin.ModelAdmin):
     list_filter = ("tours_count",)
 
 
+@admin.register(Contact)
 class ContactAdmin(admin.ModelAdmin):
-    list_display = ('name', 'email', 'phone')  # Fields displayed in the admin list view
-    search_fields = ('name', 'email', 'phone')  # Enable search by these fields
-    list_filter = ('email',)  # Add filtering options
-    readonly_fields = ('name', 'email', 'phone', 'message')  # Make fields read-only (optional)
-
-
-admin.site.register(Contact, ContactAdmin)
+    list_display = ('full_name', 'email', 'phone_number', 'country', 'city', 'tour')
+    list_filter = ('country', 'city', 'tour')
+    search_fields = ('full_name', 'email', 'phone_number', 'country', 'city')
+    ordering = ('full_name',)
+    fieldsets = (
+        (None, {
+            'fields': ('full_name', 'email', 'phone_number', 'country', 'city', 'state', 'zip_code', 'address')
+        }),
+        ('Tour Information', {
+            'fields': ('tour', 'tour_content')
+        }),
+    )
 
 
 @admin.register(TourCategory)
@@ -46,9 +54,21 @@ class TourCategoryAdmin(admin.ModelAdmin):
     image_preview.short_description = "Image Preview"
 
 
-
 @admin.register(NewsletterSubscription)
 class NewsletterSubscriptionAdmin(admin.ModelAdmin):
     list_display = ('email', 'subscribed_at')  # Display these fields in the admin list view
     search_fields = ('email',)  # Add a search bar for the email field
     list_filter = ('subscribed_at',)  # Add filters for the subscription date
+
+
+@admin.register(Activity)
+class ActivityAdmin(admin.ModelAdmin):
+    list_display = ('title', 'created_at')
+
+
+@admin.register(team)
+class teamAdmin(admin.ModelAdmin):
+    list_display = ('name',  'created_at', 'updated_at')
+    search_fields = 'name',
+    list_filter = ('created_at', 'updated_at')
+    ordering = ('-created_at',)

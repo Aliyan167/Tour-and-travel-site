@@ -3,7 +3,7 @@
 <html lang="en" data-x="html" data-x-toggle="html-overflow-hidden">
 
 
-<!-- Mirrored from creativelayers.net/themes/tour and travel-html/home-9.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 09 Dec 2024 14:42:37 GMT -->
+<!-- Mirrored from creativelayers.net/themes/viatours-html/home-2.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 09 Dec 2024 14:43:22 GMT -->
 <head>
     <!-- Required meta tags -->
     <meta charset="UTF-8">
@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="{% static 'css/vendors.css' %}">
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
 
-    <title>tour and travel</title>
+    <title>Tour & Travel </title>
 </head>
 
 <body>
@@ -42,7 +42,7 @@
         </div>
     </div>
 
-    <div class="preloader__title">tour and travel</div>
+    <div class="preloader__title">Viatours</div>
 </div>
 
 <div class="tourPagesSidebar" data-x="tourPagesSidebar" data-x-toggle="-is-active">
@@ -77,126 +77,66 @@
 <main>
 
 
-    <header class="header -type-9 js-header">
+    <header class="header -type-2 js-header" >
         <div data-anim="fade delay-3" class="header__container container">
             <div class="headerMobile__left">
                 <button class="header__menuBtn js-menu-button">
-                    <i class="icon-main-menu text-white"></i>
+                    <i class="icon-main-menu"></i>
                 </button>
             </div>
 
-            <div class="header__left">
-                <div class="header__logo">
-                    <a href="index.html" class="header__logo">
-                        <img src="{% static 'img/general/logo-light.svg' %}" alt="logo icon">
-                    </a>
+            <div class="header__logo">
+                <a href="index.html" class="header__logo">
+                    <img src="{% static 'img/general/' %}" alt="logo icon">
+                </a>
 
-                    <div class="xl:d-none ml-30">
-                        <div class="desktopNav -light">
-                            <div class="desktopNav__item">
-                                <a href="{% url 'website:home' %}">
-                                    Home
-                                </a>
-                            </div>
-                            <div class="desktopNav__item">
-                                <a href="{% url 'tour:tour' %}">
-                                    Tour
-                                </a>
-                            </div>
-
-
-                            <div class="desktopNav__item">
-                                <a href="{% url 'destination:destination' %}">
-                                    Destination
-                                </a>
-                            </div>
-                            <div class="desktopNav__item">
-                                <a href="{% url 'blog:blog' %}">
-                                    Blogs
-                                </a>
-                            </div>
-
-                            <div class="desktopNav__item">
-                                <a href="#">
-                                    Activities
-                                </a>
-                            </div>
-                             <div class="desktopNav__item">
-                                <a href="{% url 'website:about' %}">
-                                    About
-                                </a>
-                            </div>
-
-
-                            <div class="desktopNav__item">
-                                <a href="{% url 'website:contact' %}">
-                                    Contact
-                                </a>
-                            </div>
+                <div class="xl:d-none ml-30">
+                    <div class="desktopNav">
+                        <div class="desktopNav__item">
+                            <a href="{% url 'website:home' %}">
+                                Home
+                            </a>
                         </div>
 
+                        <div class="desktopNav__item">
+                            <a href="{% url 'tour:tour' %}">
+                                Tour
+                            </a>
+                        </div>
+
+                        <div class="desktopNav__item">
+                            <a href="{% url 'destination:destination' %}">
+                                Destination
+                            </a>
+                        </div>
+
+                        <div class="desktopNav__item">
+                            <a href="{% url 'website:activities' %}">
+                                Activities
+                            </a>
+                        </div>
+
+                        <div class="desktopNav__item">
+                            <a href="{% url 'blog:blog' %}">
+                                Blog
+                            </a>
+                        </div>
+
+                        <div class="desktopNav__item">
+                            <a href="{% url 'website:about' %}">
+                                About
+                            </a>
+                        </div>
+                        <div class="desktopNav__item">
+                            <a href="{% url 'website:contact' %}">
+                                Contact
+                            </a>
+                        </div>
                     </div>
+
                 </div>
             </div>
 
-
-            <div class="headerMobile__right">
-                <button class="d-flex">
-                    <i class="icon-search text-18 text-white"></i>
-                </button>
-
-                <button class="d-flex ml-20">
-                    <i class="icon-person text-18 text-white"></i>
-                </button>
-            </div>
-
-            <div class="header__right">
-
-                <div class="headerDropdown -hover-light text-white js-form-dd">
-
-
-                    <div class="headerDropdown__content" data-x="header-currency" data-x-toggle="is-active">
-                        <div class="headerDropdown">
-                            <div class="headerDropdown__container">
-
-                                <div class="headerDropdown__item">
-                                    <button class="">U.S. Dollar</button>
-                                </div>
-
-                                <div class="headerDropdown__item">
-                                    <button class="">Euro</button>
-                                </div>
-
-                                <div class="headerDropdown__item">
-                                    <button class="">British Pound</button>
-                                </div>
-
-                                <div class="headerDropdown__item">
-                                    <button class="">Turkish Lira</button>
-                                </div>
-
-                                <div class="headerDropdown__item">
-                                    <button class="">Canadian Dollar</button>
-                                </div>
-
-                                <div class="headerDropdown__item">
-                                    <button class="">Australian Dollar</button>
-                                </div>
-
-                                <div class="headerDropdown__item">
-                                    <button class="">Swiss Franc</button>
-                                </div>
-
-                                <div class="headerDropdown__item">
-                                    <button class="">Singapore Dollar</button>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
         </div>
     </header>
     {% block content %}
@@ -284,18 +224,13 @@
 
                             <div class="y-gap-10 mt-20">
 
-                                <a class="d-block fw-500" href="#">
+                                <a class="d-block fw-500" href="{% url 'website:contact' %}">
                                     Get in Touch
                                 </a>
 
-                                <a class="d-block fw-500" href="#">
-                                    Help center
+                                <a class="d-block fw-500" href="{% url 'website:activities'%}">
+                                    Activities
                                 </a>
-
-                                <a class="d-block fw-500" href="#">
-                                    Live chat
-                                </a>
-
                                 <a class="d-block fw-500" href="#">
                                     How it works
                                 </a>
@@ -308,9 +243,22 @@
                             <p class="mt-20">Subscribe to the free newsletter and stay up to date</p>
 
                             <div class="footer__newsletter">
-                                <input type="Email" placeholder="Your email address">
-                                <button>Send</button>
+                                <form method="post" action="{% url 'website:home' %}">
+                                    {% csrf_token %}
+                                    {{ newsletter_form.as_p }}
+                                    <button type="submit" class="btn btn-primary" style="padding-top: 25px;">Send
+                                    </button>
+                                </form>
                             </div>
+                            {% if messages %}
+                            <div class="alert-container">
+                                {% for message in messages %}
+                                <div class="alert alert-{{ message.tags }}">
+                                    {{ message }}
+                                </div>
+                                {% endfor %}
+                            </div>
+                            {% endif %}
                         </div>
                     </div>
                 </div>

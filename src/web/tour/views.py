@@ -9,6 +9,7 @@ from .forms import BookingForm
 from .utils import send_reservation_email
 
 
+
 class tourView(TemplateView):
     template_name = 'tour.html'
 
@@ -39,8 +40,9 @@ class TourDetailView(TemplateView):
         # Retrieve the specific tour object
         tour_id = self.kwargs.get('pk')  # Assumes you're passing `pk` in the URL
         tour = get_object_or_404(Tour, id=tour_id)
+        tour_list = Tour.objects.all().order_by('price')
+        context['tours'] = tour_list
 
-        # Add the tour object to the context
         context['tour'] = tour
 
         # Fetch related reviews
