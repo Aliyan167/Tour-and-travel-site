@@ -6,7 +6,6 @@ from django.urls import reverse_lazy
 from django.contrib import messages
 from django.views.generic.edit import FormView
 from .forms import BookingForm
-from .utils import send_reservation_email
 
 
 
@@ -27,6 +26,9 @@ class tourView(TemplateView):
 
         # Add paginated tours to the context
         context['tours'] = page_obj
+
+
+
         return context
 
 
@@ -58,18 +60,6 @@ class BookingView(FormView):
     success_url = reverse_lazy('tour:booking')  # Redirect to home page after successful booking
 
     # Handle successful submission
-    def form_valid(self, form):
-        booking = form.save()  # Save the booking
-        # Send the reservation confirmation email
-        send_reservation_email(
-            recipient_email=booking.email,
-            full_name=booking.full_name,
-            tour_title=booking.tour.title,  # Get the tour title from the ForeignKey
-            created_at=booking.created_at  # Pass the created_at timestamp
-
-        )
-        messages.success(self.request, 'Your booking has been successfully made! A confirmation email has been sent.')
-        return super().form_valid(form)
 
     # Handle invalid submission
     def form_invalid(self, form):
