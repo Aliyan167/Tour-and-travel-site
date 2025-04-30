@@ -31,7 +31,7 @@ class DestinationView(TemplateView):
             destinations_list = destinations_list.filter(name__in=selected_categories)
 
         # Add pagination
-        paginator = Paginator(destinations_list, 1)  # Adjust items per page as needed
+        paginator = Paginator(destinations_list, 5)  # Adjust items per page as needed
         page_number = self.request.GET.get('page')
         page_obj = paginator.get_page(page_number)
 
