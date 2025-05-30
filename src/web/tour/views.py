@@ -53,15 +53,32 @@ class TourDetailView(TemplateView):
 
         return context
 
+from .forms import BookingForm
+from .models import Booking  # adjust this if you have a Booking model
+from .utils import send_reservation_email  # wherever you put your email function
 
 class BookingView(FormView):
     template_name = 'booking.html'
     form_class = BookingForm
-    success_url = reverse_lazy('tour:booking')  # Redirect to home page after successful booking
+    success_url = reverse_lazy('tour:booking')  # Redirect after successful booking
 
-    # Handle successful submission
+    def form_valid(self, form):
+        booking = form.save(commit=False)
+        booking.user = self.request.user
+        booking.save()
 
-    # Handle invalid submission
+        # Call the email function
+        send_reservation_email(
+            full_name=booking.full_name,
+            recipient_email=booking.email,
+            tour_title=booking.tour.title,
+            created_at=booking.created_at,
+        )
+
+        messages.success(self.request, 'Your booking was successful! Confirmation email sent.')
+        return super().form_valid(form)
+
     def form_invalid(self, form):
         messages.error(self.request, 'There was an error with your booking. Please try again.')
         return super().form_invalid(form)
+
