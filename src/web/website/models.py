@@ -1,8 +1,5 @@
 from django.db import models
-
 from src.web.tour.models import TourCategory
-
-
 class Testimonials(models.Model):
     name = models.CharField(max_length=100)
     rank = models.CharField(max_length=100)

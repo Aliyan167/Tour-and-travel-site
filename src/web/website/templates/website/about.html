@@ -5,7 +5,7 @@
 
 <section data-anim="fade" class="pageHeader -type-1">
     <div class="pageHeader__bg">
-        <img src="{% static 'img/pageHeader/1.jpg' %}" alt="image">
+        <img src="{% static 'img/pageHeader/Bilamik.jpg' %}" alt="image">
         <img src="{% static 'img/hero/1/shape.svg' %}" alt="image">
     </div>
 
@@ -14,12 +14,12 @@
             <div class="col-12">
                 <div class="pageHeader__content">
                     <h1 class="pageHeader__title">
-                        About Us
+                        About MitraTours
                     </h1>
 
                     <p class="pageHeader__text">
-                        A tropical paradise made for animal lovers replete with monkey caves, dog foundations, and
-                        dolphins in the wild.
+                        Your trusted partner for exploring Pakistan’s stunning landscapes, rich heritage, and vibrant
+                        cultures.
                     </p>
                 </div>
             </div>
@@ -31,18 +31,19 @@
     <div data-anim-wrap class="container">
         <div class="row y-gap-20 justify-between">
             <div data-anim-child="slide-up" class="col-lg-6">
-                <h2 class="text-30 fw-700">Hello. Our agency has been present for over 29 years in the market. We make
-                    the most of all our customers.</h2>
+                <h2 class="text-30 fw-700">Your trusted partner for exploring Pakistan’s stunning landscapes, rich
+                    heritage, and vibrant cultures..</h2>
             </div>
 
             <div data-anim-child="slide-up delay-2" class="col-lg-5">
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiicing elit, sed do eiusmod tempor incididunt ut labore
-                    et dolore magna aliqua.
+                    At MitraTours, we’re dedicated to showcasing the beauty and diversity of Pakistan. From the majestic
+                    peaks of Gilgit-Baltistan to the cultural treasures of Hunza and Skardu, we craft personalized
+                    travel experiences that immerse you in the heart of this extraordinary country.
                     <br><br>
-                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                    nulla pariatur.
+                    With a focus on sustainability and authentic connections, our expert team ensures every trip is
+                    seamless, safe, and memorable. Whether you’re trekking through the Karakoram or exploring ancient
+                    forts, MitraTours is your guide to Pakistan’s wonders.
                 </p>
 
                 <a href="{% url 'website:about' %}">
@@ -85,7 +86,7 @@
     <div data-anim-wrap class="container">
         <div data-anim-child="slide-up" class="row">
             <div class="col-auto">
-                <h2 class="text-30 md:text-24">Why choose Tourz</h2>
+                <h2 class="text-30 md:text-24">Why Choose MitraTourz?</h2>
             </div>
         </div>
 
@@ -287,35 +288,6 @@
                 </div>
             </div>
         </div>
-    </div>
-</section>
-
-<section class="layout-pt-xl">
-    <div data-anim-wrap class="container">
-        <div data-anim-child="slide-up" class="row">
-            <div class="col-auto">
-                <h2 class="text-30">Meet The Team</h2>
-            </div>
-        </div>
-
-        <div class="row y-gap-30 pt-40 sm:pt-20">
-            {% for member in teams %}
-            <div data-anim-child="slide-up delay-1" class="col-lg col-md-4 col-sm-6">
-                <div class="ratio ratio-23:26">
-                    {% if member.image %}
-                    <img src="{{ member.image.url }}" alt="{{ member.name }}" class="img-ratio bg-light-1 rounded-12">
-                    {% else %}
-                    <img src="{% static 'img/default-profile.jpg' %}" alt="Default Image"
-                         class="img-ratio bg-light-1 rounded-12">
-                    {% endif %}
-                </div>
-                <h3 class="text-16 fw-500 mt-20">{{ member.name }}</h3>
-                <p class="text-14 lh-16">{{ member.rank }}</p>
-            </div>
-            {% endfor %}
-        </div>
-
-
     </div>
 </section>
 
