@@ -29,7 +29,7 @@ def send_reservation_email(full_name, recipient_email, tour_title, created_at):
     If you have any inquiries, do not hesitate to contact us at your convenience.
 
     Best regards,
-    The [Your Tour Company] Team
+    The MitraTours Team
     """
 
     send_mail(

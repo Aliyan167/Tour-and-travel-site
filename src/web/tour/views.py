@@ -8,7 +8,6 @@ from django.views.generic.edit import FormView
 from .forms import BookingForm
 
 
-
 class tourView(TemplateView):
     template_name = 'tour.html'
 
@@ -26,8 +25,6 @@ class tourView(TemplateView):
 
         # Add paginated tours to the context
         context['tours'] = page_obj
-
-
 
         return context
 
@@ -53,9 +50,11 @@ class TourDetailView(TemplateView):
 
         return context
 
+
 from .forms import BookingForm
 from .models import Booking  # adjust this if you have a Booking model
 from .utils import send_reservation_email  # wherever you put your email function
+
 
 class BookingView(FormView):
     template_name = 'booking.html'
@@ -81,4 +80,3 @@ class BookingView(FormView):
     def form_invalid(self, form):
         messages.error(self.request, 'There was an error with your booking. Please try again.')
         return super().form_invalid(form)
-
