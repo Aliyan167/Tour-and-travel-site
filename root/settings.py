@@ -82,6 +82,7 @@ INSTALLED_APPS = [
     # mailchimp
     'mailchimp_transactional',
 
+
 ]
 CKEDITOR_UPLOAD_PATH = "uploads/",
 # MAILCHIMP SETTINGS

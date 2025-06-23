@@ -19,6 +19,7 @@ urlpatterns += [
     path('', include('src.web.urls')),
     path('', include('src.api.urls')),
 
+
 ]
 
 """ EXTERNAL REQUIRED APPS ----------------------------------------------------------------------------------------- """
